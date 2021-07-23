@@ -11,7 +11,7 @@ Use Antlr to syntax parse breathing.
   - ANTLR4 grammar syntax support
 
 ## License
-[MIT](https://github.com/i-tanaka730/antlr_breathing/main/LICENSE)
+[MIT](https://github.com/i-tanaka730/antlr_breathing/blob/main/LICENSE)
 
 ## Author
 [Ikuya Tanaka](https://github.com/i-tanaka730)
