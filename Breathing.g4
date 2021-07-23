@@ -1,30 +1,42 @@
 grammar Breathing;
 
 /**
- * lexer
- */
-breathing
-  : KOKYU 'の呼吸' NUM 'の型 ' NAME
-  ;
-
-/**
  * parser
  */
-KOKYU
-  // 水炎雷風岩蟲花恋蛇音獣月日
-  : [\u6c34\u708e\u96f7\u98a8\u5ca9\u87f2\u82b1\u604b\u86c7\u97f3\u7363\u6708\u65e5]
-  ;
+breathing :
+    // [TYPE]の呼吸[NUM]の型[NAME]([OPTION])
+    type '\u306e\u547c\u5438' num '\u306e\u578b' name ('('option')')?
+    ;
 
-NUM
-  // 一二三四五六七八九十
-  : [\u4e00\u4e8c\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341]+
-  ;
+type :
+    TYPE
+    ;
 
-NAME
-  // 亜-熙ぁ-んァ-ヶ
-  : [\u4e9c-\u7199\u3041-\u3093\u30a1-\u30f6]+
-  ;
+name :
+    (ANY)+
+    ;
 
-// SPACE
-//   : ' ' -> skip
-//   ;
+num :
+    NUMBER
+    ;
+
+option :
+    (NUMBER | ANY)+
+    ;
+
+/**
+ * lexer
+ */
+TYPE :
+    // 水炎雷風岩蟲花恋蛇音獣月日
+    [\u6c34\u708e\u96f7\u98a8\u5ca9\u87f2\u82b1\u604b\u86c7\u97f3\u7363\u6708\u65e5]
+    ;
+
+NUMBER :
+    // 壱弐参四五六七八九拾
+    [\u58f1\u5f10\u53c2\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u62fe]+
+    ;
+
+ANY : 
+    .
+    ;
