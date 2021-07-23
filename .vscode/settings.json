@@ -1,0 +1,10 @@
+{
+	"antlr4.generation":{
+		"mode": "external",   // 決め打ち(多分)
+		"language": "CSharp", // 出力したいプログラミング言語名
+		"listeners": true,    // listener形式で出力するか
+		"visitors": false,    // visitor形式で出力するか
+		"alternativeJar": "antlr-4.9-complete.jar", // ANTLRのバージョン(指定しないと4.8で出力)
+		"outputDir": "parser" // 出力先のフォルダ名(フォルダがなければ作成される)
+	}
+}
